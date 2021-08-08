@@ -85,7 +85,7 @@ trait LoggerTraits {
 		$path = $path . '/' . $file;
 
 		if ( @is_file( $path ) === false ) {
-			return @file_put_contents( $path, '---- started logging on ' . \date( "Y-m-d H:i:s" ) . ' ----' );
+			return @file_put_contents( $path, '---- started logging on ' . \date( "Y-m-d H:i:s" ) . ' ----' ) && \chmod( $path, 0775 );
 		}
 
 		$logs = @file_get_contents( $path );
@@ -112,6 +112,6 @@ trait LoggerTraits {
 		$prev_path = \substr( $path, 0, \strrpos( $path, '/', -2 ) + 1 );
 		$return = $this->create_path( $prev_path );
 
-		return $return && \is_writable( $prev_path ) && \mkdir( $path );
+		return $return && \is_writable( $prev_path ) && \mkdir( $path ) && \chmod( $path, 0775 );
 	}
 }
