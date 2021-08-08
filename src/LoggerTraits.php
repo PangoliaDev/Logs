@@ -1,9 +1,4 @@
 <?php
-/**
- * WPStrap core
- *
- * @package Pangolia\Logs
- */
 declare( strict_types = 1 );
 
 namespace Pangolia\Logs;
@@ -81,6 +76,7 @@ trait LoggerTraits {
 	 * @param $path
 	 * @param $message
 	 * @return bool
+	 * @since 0.1.0
 	 */
 	protected function log_to( $path, $message ): bool {
 		$this->create_path( $path );
@@ -106,6 +102,7 @@ trait LoggerTraits {
 	 *
 	 * @param $path
 	 * @return bool
+	 * @since 0.1.0
 	 */
 	public function create_path( $path ): bool {
 		if ( \is_dir( $path ) ) {

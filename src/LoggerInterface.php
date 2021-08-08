@@ -1,9 +1,4 @@
 <?php
-/**
- * WPStrap core
- *
- * @package Pangolia\Logs
- */
 declare( strict_types = 1 );
 
 namespace Pangolia\Logs;
