@@ -1,7 +1,7 @@
 {
   "name": "pangolia/logs",
   "description": "A simple logger for WordPress.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://pangolia.com",
   "scripts": {
     "phpcs": "./vendor/bin/phpcs --standard=./phpcs.xml",

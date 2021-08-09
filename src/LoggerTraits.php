@@ -82,7 +82,7 @@ trait LoggerTraits {
 		$this->create_path( $path );
 
 		$file = \date( 'Y' ) . '-' . \date( 'm' ) . '.txt';;
-		$path = $path . '/' . $file;
+		$path = \trailingslashit( $path ) . $file;
 
 		if ( @is_file( $path ) === false ) {
 			return @file_put_contents( $path, '---- started logging on ' . \date( "Y-m-d H:i:s" ) . ' ----' ) && \chmod( $path, 0775 );
@@ -104,7 +104,7 @@ trait LoggerTraits {
 	 * @return bool
 	 * @since 0.1.0
 	 */
-	public function create_path( $path ): bool {
+	protected function create_path( $path ): bool {
 		if ( \is_dir( $path ) ) {
 			return true;
 		}
