@@ -14,7 +14,7 @@ interface LoggerInterface {
 	 * @return void
 	 * @since 0.1.0
 	 */
-	public function emergency( $message, array $context = [] );
+	public static function emergency( $message, array $context = [] );
 
 	/**
 	 * Action must be taken immediately.
@@ -28,7 +28,7 @@ interface LoggerInterface {
 	 * @return void
 	 * @since 0.1.0
 	 */
-	public function alert( $message, array $context = [] );
+	public static function alert( $message, array $context = [] );
 
 	/**
 	 * Critical conditions.
@@ -41,7 +41,7 @@ interface LoggerInterface {
 	 * @return void
 	 * @since 0.1.0
 	 */
-	public function critical( $message, array $context = [] );
+	public static function critical( $message, array $context = [] );
 
 	/**
 	 * Runtime errors that do not require immediate action but should typically
@@ -53,7 +53,7 @@ interface LoggerInterface {
 	 * @return void
 	 * @since 0.1.0
 	 */
-	public function error( $message, array $context = [] );
+	public static function error( $message, array $context = [] );
 
 	/**
 	 * Exceptional occurrences that are not errors.
@@ -67,7 +67,7 @@ interface LoggerInterface {
 	 * @return void
 	 * @since 0.1.0
 	 */
-	public function warning( $message, array $context = [] );
+	public static function warning( $message, array $context = [] );
 
 	/**
 	 * Normal but significant events.
@@ -78,7 +78,7 @@ interface LoggerInterface {
 	 * @return void
 	 * @since 0.1.0
 	 */
-	public function notice( $message, array $context = [] );
+	public static function notice( $message, array $context = [] );
 
 	/**
 	 * Interesting events.
@@ -91,7 +91,7 @@ interface LoggerInterface {
 	 * @return void
 	 * @since 0.1.0
 	 */
-	public function info( $message, array $context = [] );
+	public static function info( $message, array $context = [] );
 
 	/**
 	 * Detailed debug information.
@@ -102,7 +102,7 @@ interface LoggerInterface {
 	 * @return void
 	 * @since 0.1.0
 	 */
-	public function debug( $message, array $context = [] );
+	public static function debug( $message, array $context = [] );
 
 	/**
 	 * Logs with an arbitrary level.
@@ -112,6 +112,5 @@ interface LoggerInterface {
 	 * @return bool|void true on success, false on failure or void if debug log is disabled.
 	 * @since 0.1.0
 	 */
-	public function log( $level, $message, array $context = [] );
-
+	public static function write( $level, $message, array $context = [] );
 }
