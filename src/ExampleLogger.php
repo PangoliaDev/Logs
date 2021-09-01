@@ -32,7 +32,7 @@ class ExampleLogger extends AbstractLogger implements LoggerInterface {
 		}
 
 		// Add a WP log to a custom folder inside wp_content
-		return static::write_to( 'path/to/logs', $message );
+		return static::write_to( trailingslashit( WP_CONTENT_DIR ) . 'path/to/logs', $message );
 	}
 
 	/**
