@@ -12,7 +12,7 @@
     <arg name="extensions" value="php"/>
 
     <!-- Check for PHP cross-version compatibility. -->
-    <config name="testVersion" value="7.1-"/>
+    <config name="testVersion" value="7.4-"/>
     <rule ref="PHPCompatibilityWP">
         <include-pattern>*\.php$</include-pattern>
     </rule>
@@ -29,10 +29,14 @@
         <!-- Exclude as plugin adheres to the PSR-4 standard. -->
         <exclude name="WordPress.Files.FileName"/>
         <exclude name="NeutronStandard.AssignAlign.DisallowAssignAlign.Aligned"/>
-         <!-- Exclude as return types are invalid for mixed returns. -->
+        <!-- Exclude as return types are invalid for mixed returns. -->
         <exclude name="NeutronStandard.Functions.TypeHint.NoReturnType"/>
-
+        <exclude name="WordPress.DateTime.RestrictedFunctions.date_date"/>
+        <exclude name="WordPress.PHP.NoSilencedErrors.Discouraged"/>
+        <exclude name="WordPress.NamingConventions.ValidHookName.UseUnderscores"/>
+        <exclude name="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound"/>
         <exclude name="WordPress.WP.AlternativeFunctions.file_system_read_file_put_contents"/>
+        <exclude name="WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents"/>
     </rule>
 
     <!--https://github.com/WordPress/WordPress-Coding-Standards/wiki/Customizable-sniff-properties#custom-input-sanitization-functions-->
